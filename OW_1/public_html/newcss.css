@@ -1,0 +1,67 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-08-01, 17:03:52
+    Author     : aco
+http://www.w3schools.com/css/css_selectors.asp
+*/
+
+
+
+.img-container{
+    text-align: center;
+
+    /*height: auto;*/
+    /*width: 100%;*/
+    /*float: left;*/
+    /*    border: solid;
+        border-color: green;*/
+    /*border-width: 100px;*/
+    /*margin: 100px 100px 100px 100px;*/
+}
+
+.img-container img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: -10px;
+
+    /*    border: solid;
+        border-color: activeborder;*/
+
+}
+.user_name{
+    font-weight: bold;
+    font-family: monospace;
+    color: royalblue;
+    font-size: 90%;
+
+    /*word-break: break-all;*/
+    /*height: auto;*/
+    /*width: auto;*/
+    /*word-wrap: break-word;*/
+    /*overflow-x: hidden;*/
+    /*word-break: normal;*/
+
+    /*    border: solid;
+        border-color: aqua;*/
+}
+.img-container-box{
+    float: left;
+    /*    border-style: solid;
+        border-color: red;*/
+}
+.buttons-container{
+    width: 10%;
+    float: left;
+    /*    border-style: solid;
+        border-color: red;*/
+}
+.buttons-container button{
+    color: red;
+    float: left;
+    /*    border-style: solid;
+        border-color: gold;*/
+}

@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "name": "Tomek",
+            "value": 1
+        },
+        {
+            "name": "Michal",
+            "value": 2
+        },
+        {
+            "name": "Artur",
+            "value": 3
+        },
+        {
+            "name": "Arek",
+            "value": 4
+        },
+        {
+            "name": "Piotr",
+            "value": 5
+        },
+        {
+            "name": "Zenek",
+            "value": 6
+        }
+    ]
+}

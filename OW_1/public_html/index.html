@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <script src="js/libs/jquery/jquery.js"></script>
+        <script src="js/jsonRead.js"></script>
+        <script src="js/jqueryJsonRead.js"></script>
+        <script src="js/querry_json.js"></script>
+        <link rel="Stylesheet" type="text/css" href="newcss.css" />
+        <link rel="Stylesheet" type="text/css" href="style.css" />
+        <title>Face substitution</title>
+        <script>
+            function dragResize(edge) {
+                overwolf.windows.getCurrentWindow(function(result) {
+                    if (result.status === "success") {
+                        overwolf.windows.dragResize(result.window.id, edge);
+                    }
+                });
+            }
+            ;
+
+            function dragMove() {
+                overwolf.windows.getCurrentWindow(function(result) {
+                    if (result.status === "success") {
+                        overwolf.windows.dragMove(result.window.id);
+                    }
+                });
+            }
+            ;
+
+            function closeWindow() {
+                overwolf.windows.getCurrentWindow(function(result) {
+                    if (result.status === "success") {
+                        overwolf.windows.close(result.window.id);
+                    }
+                });
+            }
+            ;
+
+            function minimizeWindow() {
+                overwolf.windows.getCurrentWindow(function(result) {
+                    if (result.status === "success") {
+                        overwolf.windows.minimize(result.window.id);
+                    }
+                });
+            }
+            ;
+
+            function podajWindow() {
+                overwolf.windows.getCurrentWindow(function(result) {
+                    alert(result.window.id);
+                });
+            }
+            ;
+
+            Overwolf.media.onScreenshotTaken = function() {
+                if (Overwolf.media.lastScreenshotSucceded) {
+                    document.getElementById('CaptureContainer').innerHTML = '<img id="ImageToShare" src="' + Overwolf.media.lastScreenshotUrl + '">';
+                } else {
+                    // Handle error
+                    alert("nie dziala");
+                }
+            };
+            overwolf.settings.registerHotKey(
+                    "my_cool_action",
+                    function(arg) {
+                        if (arg.status === "success") {
+                            alert("This is my cool action!");
+                            alert(arg.status);
+                        }
+                    }
+            );
+            function dupa() {
+                alert('ssssss');
+            }
+
+            function changePosition() {
+                overwolf.windows.getCurrentWindow(function(result) {
+                    if (result.status === "success") {
+                        overwolf.windows.changePosition(result.window.id, 0, 0);
+                    }
+                });
+            }
+            ;
+
+            function windowName() {
+                overwolf.windows.getCurrentWindow(function(result) {
+                    if (result.status === "success") {
+                        alert(overwolf.windows.obtainDeclaredWindow(result.window.name));
+                    }
+                });
+            }
+            ;
+            function openStreamWindow() {
+
+                overwolf.windows.obtainDeclaredWindow("SubWindow", function(result) {
+                    if (result.status === "success") {
+                        overwolf.windows.restore(result.window.id, function(result) {
+                            console.log(result);
+                        });
+                    }
+                });
+
+            }
+            ;
+
+        </script>
+
+
+    </head>
+
+    <body onload="Overwolf.Connect()">
+        <div style="width:20px; height:20px; bottom:0; right:0; position:absolute;" onmousedown="dragResize('BottomRight');"></div>
+        <div id="content" onmousedown="dragMove();">
+            <div id="json_container">
+
+            </div>
+ <div id="content4">
+            
+        </div>
+
+            <div id="data" class="img-container">
+
+                <div class="img-container-box">
+                    <img id="img_1" src="icons/normal.png" alt="normal">
+                    <div class="user_name" id="name_1">normal</div> <!-- tu ma być imie-->
+                </div>
+
+                <div class="img-container-box">
+                    <img id="img_2" src="icons/anger.png" alt="anger">
+                    <div class="user_name" id="name_2">normal</div> <!-- tu ma być imie-->
+                </div>
+
+                <div class="img-container-box">
+                    <img id="img_3" src="icons/disgust.png" alt="disgust">
+                    <div class="user_name" id="name_3">normal</div> <!-- tu ma być imie-->
+                </div>
+
+                <div class="img-container-box">
+                    <img id="img_4" src="icons/fear.png" alt="fear">
+                    <div class="user_name" id="name_4">normal</div> <!-- tu ma być imie-->
+                </div>
+
+                <div class="img-container-box">
+                    <img id="img_5" src="icons/happiness.png" alt="happiness">
+                    <div class="user_name" id="name_5">normal</div> <!-- tu ma być imie-->
+                </div>
+
+                <div class="img-container-box">
+                    <img id="img_6" src="icons/sadness.png" alt="sadness">
+                    <div class="user_name" id="name_6">normal</div> <!-- tu ma być imie-->
+                </div>
+
+                <div class="img-container-box">
+                    <img id="img_7" src="icons/surprise.png" alt="surprise">
+                    <div class="user_name" id="name_7">normal</div> <!-- tu ma być imie-->
+                </div>
+
+            </div>
+
+
+            <div class="buttons-container">
+                <button onclick="closeWindow();">Close</button>
+
+                <!--<button onclick="podajWindow()">podaj window</button>-->
+
+                <button onclick="openStreamWindow()">Otwórz okno</button>
+
+
+                <!--<button onclick="aaa();" class="buttons">Shell</button>-->
+                <!--<button id="close" onclick="closeWindow();">Close</button>-->
+                <button onclick="changePosition()">Position start</button>
+                <!--<button id="button">JASON</button>-->
+            </div>
+
+
+        </div>
+
+
+
+        <script>
+//            JsonRead();
+//    jqueryJsonRead();
+wczytywanieZdjec();
+        </script>
+
+
+  
+
+    </body>
+</html>

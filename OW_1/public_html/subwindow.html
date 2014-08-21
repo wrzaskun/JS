@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+    <head> 
+        <link rel="stylesheet" href="style.css" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
+        <script src="js/jsonRead.js"></script>
+        <link rel="Stylesheet" type="text/css" href="newcss.css" />
+        <link rel="Stylesheet" type="text/css" href="style.css" />
+        <title>Sub window</title>
+        <script>
+            function dragMove() {
+                overwolf.windows.getCurrentWindow(function(result) {
+                    if (result.status === "success") {
+                        overwolf.windows.dragMove(result.window.id);
+                    }
+                });
+            }
+            ;
+
+            function closeWindow() {
+                overwolf.windows.getCurrentWindow(function(result) {
+                    if (result.status === "success") {
+                        overwolf.windows.close(result.window.id);
+                    }
+                });
+            }
+            ;
+   
+        </script>
+    </head>
+
+    <body>
+        <div id="content" onmousedown="dragMove();">
+            <div class="buttons-container">
+            <button id="close" onclick="closeWindow();" class="buttons">Close</button>
+            </div>
+        </div>
+
+    </body>
+</html>

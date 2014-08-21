@@ -1,0 +1,32 @@
+{
+    "users": [
+        {
+            "name": "Tomek",
+            "value": "anger"
+        },
+        {
+            "name": "Michal",
+            "value": "disgust"
+        },
+        {
+            "name": "Artur",
+            "value": "fear"
+        },
+        {
+            "name": "Arek",
+            "value": "happiness"
+        },
+        {
+            "name": "Piotr",
+            "value": "noramal"
+        },
+        {
+            "name": "Zenek",
+            "value": "sadness"
+        },
+        {
+            "name": "Kostek",
+            "value": "surprise"
+        }
+    ]
+}
